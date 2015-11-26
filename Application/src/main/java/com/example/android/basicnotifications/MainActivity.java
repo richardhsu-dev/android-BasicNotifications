@@ -8,6 +8,7 @@ import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.NotificationCompat;
+import android.support.v4.app.NotificationManagerCompat;
 import android.view.View;
 
 /**
@@ -93,8 +94,7 @@ public class MainActivity extends Activity {
          * Send the notification. This will immediately display the notification icon in the
          * notification bar.
          */
-        NotificationManager notificationManager = (NotificationManager) getSystemService(
-                NOTIFICATION_SERVICE);
+        NotificationManagerCompat notificationManager = NotificationManagerCompat.from(getApplicationContext());
         notificationManager.notify(NOTIFICATION_ID, builder.build());
         // END_INCLUDE(send_notification)
     }
